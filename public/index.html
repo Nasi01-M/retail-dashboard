@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Retail Dashboard</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Retail Dashboard</h1>
+    <p>Orders, Products & Customers</p>
+    <form id="filter-form">
+      <!-- Added id attributes here -->
+      <input type="text" id="filter-order"    name="order"    placeholder="Order ID" />
+      <input type="text" id="filter-customer" name="customer" placeholder="Customer ID" />
+      <input type="text" id="filter-product"  name="product"  placeholder="Product Name" />
+      <button type="submit" id="filter-btn">Filter</button>
+      <button type="button" id="reset-btn">Reset</button>
+      <a href="/api-docs" class="swagger-link" target="_blank">Swagger UI</a>
+    </form>
+  </header>
+
+  <main>
+    <section id="chart-section">
+      <canvas id="sales-chart" height="120"></canvas>
+    </section>
+
+    <section id="table-section">
+      <table id="dashboard-table">
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Country</th>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Total Price</th>
+            <th>Stock Left</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Filled by JS -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Ensure this script tag is here, after all DOM elements -->
+  <script src="script.js"></script>
+</body>
+</html>
