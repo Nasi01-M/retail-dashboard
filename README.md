@@ -65,7 +65,7 @@ curl "http://localhost:3005/api/dashboard?product=lamp"
 # Combined filters
 curl "http://localhost:3005/api/dashboard?customer=12748&product=lamp"
 
-3. Analytics (Monthly Sales)
+### 3. Analytics (Monthly Sales)
 Method	URL	Description
 GET	/api/analytics/sales	Returns monthly total sales
 
@@ -73,7 +73,7 @@ Example
 bash
 curl http://localhost:3005/api/analytics/sales
 
-4. Swagger API Docs
+### 4. Swagger API Docs
 Method	URL	Description
 GET	/api-docs	Interactive Swagger UI interface
 
@@ -84,14 +84,15 @@ Visit http://localhost:3005/api-docs in your browser to explore and test every e
 - Indexed on `orders.order_date`, `products.product_name`  
 - Populated with **>500k** transaction rows and **16k+** products  
 
-### 2. CRUD API Endpoints
+## 2. CRUD API Endpoints
 ```bash
 GET    /api/products
 GET    /api/products/:id
 POST   /api/products
 PUT    /api/products/:id
 DELETE /api/products/:id
-3. Dashboard API
+
+## 3. Dashboard API
 GET /api/dashboard
 
 Query parameters:
@@ -104,12 +105,12 @@ product (partial product name)
 
 Returns relational view using PostgreSQL view customer_orders_view
 
-4. API Documentation (Swagger)
+## 4. API Documentation (Swagger)
 Accessible at: http://localhost:3005/api-docs
 
 Auto-generated from JSDoc annotations in /routes/*.js
 
-5. Query Optimization
+## 5. Query Optimization
 View: customer_orders_view simplifies multi-join queries
 
 Stored Procedure: get_total_sales(start_date, end_date)
@@ -118,7 +119,7 @@ Trigger: trigger_update_stock updates products.stock_quantity on new orders
 
 Benchmarking with EXPLAIN ANALYZE
 
-6. Frontend Dashboard
+## 6. Frontend Dashboard
 Filter by Customer ID, Order ID, Product Name
 
 Reset filters to view all data
@@ -127,19 +128,19 @@ Highlight matching rows
 
 Chart.js bar chart: Monthly sales overview
 
-🔧 Getting Started
+##🔧 Getting Started
 Prerequisites
 Node.js ≥ 14
 
 PostgreSQL ≥ 12
 
-1. Clone & Install
+### 1. Clone & Install
 bash
 git clone https://github.com/yourusername/retail-db-performance.git
 cd retail-db-performance
 npm install
 
-2. Configure Environment
+### 2. Configure Environment
 Create a .env in project root:
 dotenv
 DB_HOST=localhost
@@ -149,7 +150,7 @@ DB_PASSWORD=your_password
 DB_NAME=retaildb
 PORT=3005
 
-3. Initialize Database
+### 3. Initialize Database
 bash
 # In psql
 \i db/schema.sql         -- create tables & indexes
@@ -158,14 +159,14 @@ bash
 \i db/views_and_procs.sql
 \i db/triggers.sql
 
-4. Run Server
+### 4. Run Server
 bash
 npm start
 Dashboard UI: http://localhost:3005/
 
 Swagger UI: http://localhost:3005/api-docs
 
-🗂️ File Structure
+## 🗂️ File Structure
 pgsql
 retail-db-performance/
 ├── db/
